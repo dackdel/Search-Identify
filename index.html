@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Search and Identify</title>
+	<meta name="description" content="Search and Identify electronic components">
+  	<meta name="Man" content="Electronic Components">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+
+<script>
+$(function(){
+	console.log('Dom ready');
+	$.getJSON('list.json', function(data) {
+		 $.each(data, function(i, component) {
+		 	if (i<20){
+   			$('#main').append('<div class="row"><div class="breadboard"><img src="images/breadboard/'+component.filename+'_breadboard.svg" /></div><div class="schematic"><p><img src="images/schematic/'+component.filename+'_schematic.svg" /></p></div></div>');
+   			}
+		 });
+
+        console.log(data);
+    });
+});
+</script>
+</head>
+<body>
+	<div id="main"> 
+
+
+
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
